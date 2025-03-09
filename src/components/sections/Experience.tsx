@@ -5,86 +5,27 @@ import {
   FaBuilding,
   FaCalendarAlt,
   FaCode,
-  FaServer,
   FaCloud,
   FaMobileAlt,
   FaExternalLinkAlt,
 } from 'react-icons/fa';
 import Image from 'next/image';
+import { experiences, companyLinks, experienceContent } from '@/data/content';
 
-interface CompanyLink {
-  url: string;
-  logo: string;
-}
-
-const companyLinks: Record<string, CompanyLink> = {
-  Appfire: {
-    url: 'https://appfire.com/',
-    logo: '/companies/appfire-logo.png',
-  },
-  PropertyLoop: {
-    url: 'https://www.propertyloop.co.uk/',
-    logo: '/companies/propertyloop-logo.png',
-  },
-  Insnapsys: {
-    url: 'https://www.insnapsys.com/',
-    logo: '/companies/insnapsys-logo.png',
-  },
+const getIconComponent = (iconType?: string) => {
+  switch (iconType) {
+    case 'code':
+      return <FaCode className="text-white" />;
+    case 'cloud':
+      return <FaCloud className="text-white" />;
+    case 'mobile':
+      return <FaMobileAlt className="text-white" />;
+    default:
+      return <FaBuilding className="text-white" />;
+  }
 };
 
 const Experience = () => {
-  const experiences = [
-    {
-      title: 'Senior Software Engineer (Platform)',
-      company: 'Appfire',
-      period: 'October 2024 - Present',
-      description: [
-        'Leading the development of a product API SDK and contributing to cloud infrastructure initiatives to enhance developer productivity and streamline application deployment processes.',
-        'Won an internal hackathon for developing an innovative tunnel solution for internal use.',
-      ],
-    },
-    {
-      title: 'Software Engineer (Platform)',
-      company: 'Appfire',
-      period: 'December 2023 - October 2024',
-      description: [
-        'Developed a serverless application platform, significantly reducing deployment times and improving developer productivity.',
-        'Implemented secure cross-account deployment architecture for efficient resource management across multiple cloud environments.',
-      ],
-      icon: <FaCloud className="text-primary" />,
-    },
-    {
-      title: 'Full Stack Engineer',
-      company: 'PropertyLoop',
-      period: 'March 2022 - December 2023',
-      description: [
-        'Led the development of a property management platform, integrating with CRM systems and implementing robust data security measures.',
-        'Created marketing automation tools that increased platform traffic by 80% through efficient data synchronization across multiple channels.',
-      ],
-      icon: <FaCode className="text-primary" />,
-    },
-    {
-      title: 'Software Developer',
-      company: 'Insnapsys',
-      period: 'March 2021 - March 2022',
-      description: [
-        'Received company growth booster award for exceptional contributions to e-commerce solutions.',
-        'Built and managed an operator portal for warehouse operations and developed services to handle thousands of orders daily.',
-        'Improved system efficiency by 25% through enhanced documentation and testing practices.',
-      ],
-      icon: <FaServer className="text-primary" />,
-    },
-    {
-      title: 'Software Developer Intern',
-      company: 'Insnapsys',
-      period: 'July 2020 - March 2021',
-      description: [
-        'Developed a comprehensive health and fitness mobile application integrating with popular fitness tracking platforms.',
-      ],
-      icon: <FaMobileAlt className="text-primary" />,
-    },
-  ];
-
   return (
     <section id="experience" className="py-24 px-4 md:px-8 bg-gray-900">
       <div className="container mx-auto max-w-4xl">
@@ -96,7 +37,7 @@ const Experience = () => {
           className="space-y-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-16">
-            My professional journey and work experience
+            {experienceContent.title}
           </h2>
 
           <div className="relative border-l-2 border-primary/30 pl-8 ml-4">
@@ -110,7 +51,7 @@ const Experience = () => {
                 className="mb-12 relative"
               >
                 <div className="absolute -left-12 w-10 h-10 bg-primary rounded-full border-4 border-gray-900 flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
-                  {exp.icon || <FaBuilding className="text-white" />}
+                  {getIconComponent(exp.iconType)}
                 </div>
                 <div className="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                   <h3 className="text-2xl font-bold text-primary mb-4">{exp.title}</h3>

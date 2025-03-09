@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { heroContent } from '@/data/content';
 
 const Hero = () => {
   return (
@@ -21,7 +22,7 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-5xl md:text-7xl font-bold"
             >
-              Hi, I'm <span className="text-primary">Bhuvesh Dhiman</span>
+              {heroContent.greeting} <span className="text-primary">{heroContent.name}</span>
             </motion.h1>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -29,45 +30,26 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-2xl md:text-3xl text-gray-300 font-medium"
             >
-              Senior Software Engineer
+              {heroContent.title}
             </motion.h2>
           </div>
 
           <div className="space-y-6 max-w-3xl">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-lg md:text-xl text-gray-300"
-            >
-              I'm not just a software engineer. I'm a problem solver, a system architect, and a
-              force multiplier for teams. I specialize in building scalable platforms, cloud
-              infrastructure, and developer tooling, crafting solutions that simplify complexity and
-              drive efficiency.
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.35 }}
-              className="text-lg md:text-xl text-gray-300"
-            >
-              What truly sets me apart is my attention to detail, clarity in communication, and
-              ability to bridge the gap between technical and non-technical teams. I lead by
-              influence, inspiring collaboration and aligning teams toward a shared vision without
-              relying on authority. My soft skills make me the person everyone loves working with. I
-              break down complex ideas into clear, actionable insights, making collaboration
-              seamless and ensuring projects move forward with purpose.
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-lg md:text-xl text-primary font-semibold"
-            >
-              Let's build something extraordinary.
-            </motion.p>
+            {heroContent.paragraphs.map((paragraph, index) => (
+              <motion.p
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 + index * 0.05 }}
+                className={`text-lg md:text-xl ${
+                  index === heroContent.paragraphs.length - 1
+                    ? 'text-primary font-semibold'
+                    : 'text-gray-300'
+                }`}
+              >
+                {paragraph}
+              </motion.p>
+            ))}
           </div>
 
           <motion.div
@@ -80,7 +62,7 @@ const Hero = () => {
               href="#about"
               className="px-8 py-3 bg-primary text-white rounded-full font-medium hover:bg-primary/90 transition-colors"
             >
-              Explore
+              {heroContent.ctaText}
             </Link>
           </motion.div>
 
