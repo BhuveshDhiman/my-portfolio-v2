@@ -27,8 +27,8 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/80 dark:bg-dark/80 backdrop-blur-md shadow-sm py-4'
-          : 'bg-transparent py-6'
+          ? 'bg-gray-900/90 dark:bg-gray-900/90 backdrop-blur-md shadow-md py-4'
+          : 'bg-gray-900/70 dark:bg-gray-900/70 backdrop-blur-sm py-6'
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -42,8 +42,7 @@ const Header = () => {
             transition={{ duration: 0.5 }}
             className="flex items-center"
           >
-            <FaCode className="w-6 h-6 mr-2" />
-            <span className="font-mono text-lg font-bold">{`<Bhuvesh />`}</span>
+            <span className="font-mono text-lg font-bold text-white">Bhuvesh</span>
           </motion.div>
         </Link>
 
@@ -58,7 +57,7 @@ const Header = () => {
             >
               <Link
                 href={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-300"
+                className="text-gray-300 hover:text-primary transition-colors duration-300"
               >
                 {item.name}
               </Link>
@@ -68,7 +67,7 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-foreground"
+          className="md:hidden text-white"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           <svg
@@ -98,14 +97,14 @@ const Header = () => {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-background border-t border-gray-200 dark:border-gray-800"
+          className="md:hidden bg-gray-900 border-t border-gray-800"
         >
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-300 py-2"
+                className="text-gray-300 hover:text-primary transition-colors duration-300 py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}

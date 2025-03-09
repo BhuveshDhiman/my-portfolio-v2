@@ -50,8 +50,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
+    { media: '(prefers-color-scheme: light)', color: '#3b82f6' },
+    { media: '(prefers-color-scheme: dark)', color: '#0f172a' },
   ],
 };
 
@@ -62,7 +62,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900 text-white`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

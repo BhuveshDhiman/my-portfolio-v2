@@ -8,10 +8,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#0070f3',
-        secondary: '#6b7280',
-        dark: '#111827',
-        light: '#f9fafb',
+        primary: '#3b82f6',
+        secondary: '#64748b',
+        dark: '#0f172a',
+        light: '#f8fafc',
       },
       fontFamily: {
         sans: ['var(--font-geist-sans)'],
