@@ -14,7 +14,7 @@ import Image from 'next/image';
 
 interface CompanyLink {
   url: string;
-  logo?: string;
+  logo: string;
 }
 
 const companyLinks: Record<string, CompanyLink> = {
