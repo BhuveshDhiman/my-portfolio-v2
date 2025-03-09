@@ -41,7 +41,6 @@ const Experience = () => {
       description: [
         'Leading the development of a product API SDK and contributing to cloud infrastructure initiatives to enhance developer productivity and streamline application deployment processes.',
       ],
-      icon: <FaCloud className="text-primary" />,
     },
     {
       title: 'Software Engineer (Platform)',
