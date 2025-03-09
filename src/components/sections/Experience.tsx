@@ -40,6 +40,7 @@ const Experience = () => {
       period: 'October 2024 - Present',
       description: [
         'Leading the development of a product API SDK and contributing to cloud infrastructure initiatives to enhance developer productivity and streamline application deployment processes.',
+        'Won an internal hackathon for developing an innovative tunnel solution for internal use.',
       ],
     },
     {
