@@ -28,12 +28,19 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    title: 'Senior Software Engineer (Platform)',
+    title: 'Senior Software Engineer',
     company: 'Appfire',
     period: 'October 2024 - Present',
     description: [
-      'Leading the development of a product API SDK and contributing to cloud infrastructure initiatives to enhance developer productivity and streamline application deployment processes',
-      'Won an internal hackathon for developing an innovative tunnel solution for internal use',
+      'Leading product oriented engineering by shaping requirements, refining solution direction, and architecting systems using natural language driven development',
+      'Using AI agents for prototypes, scaffolding, and initial code generation while applying engineering review and refinement for high quality output',
+      'Converting product ideas into stable and production ready systems by enforcing clarity in design, structure, and maintainability',
+      'Improving developer experience by introducing AI enabled workflows and raising the standard for modern engineering practices',
+      'Influencing engineering direction across teams by combining product thinking with engineering depth',
+      'Designed and built scalable tools for the Atlassian Forge platform, improving reliability, security, and usability under strict rate limits',
+      'Built components of a flexible platform supporting both serverless and EKS based architectures to give teams infra choice',
+      'Created internal tooling and enhancements that increased developer productivity across teams',
+      'Worked closely with product and platform teams to translate product goals into technical plans focused on clarity, performance, and long term maintainability',
     ],
   },
   {
@@ -41,8 +48,11 @@ export const experiences: Experience[] = [
     company: 'Appfire',
     period: 'December 2023 - October 2024',
     description: [
-      'Developed a serverless application platform, significantly reducing deployment times and improving developer productivity',
-      'Implemented secure cross-account deployment architecture for efficient resource management across multiple cloud environments',
+      'Contributed to a serverless application platform built with AWS and CDK, reducing deployment time and improving developer productivity',
+      'Built major parts of a Kubernetes based platform using EKS Blueprints and integrated tools such as KEDA, Sumo Logic, Wiz, and ElastiCache',
+      'Implemented secure cross account deployments with Bitbucket Pipelines using OIDC and centralized IAM roles',
+      'Developed CLI tooling and infra components that streamlined platform operations for internal teams',
+      'Worked with platform and product teams to evolve CI CD and operational workflows for better efficiency',
     ],
     iconType: 'cloud',
   },
@@ -81,10 +91,11 @@ export const experiences: Experience[] = [
 export const heroContent = {
   greeting: "Hi, I'm",
   name: 'Bhuvesh Dhiman',
-  title: 'Senior Software Engineer',
+  title: 'AI-Native Senior Software Engineer with more than 5 years experience',
   paragraphs: [
-    "I'm not just a software engineer. I'm a problem solver, a system architect, and a force multiplier for teams. I specialize in building scalable platforms, cloud infrastructure, and developer tooling, crafting solutions that simplify complexity and drive efficiency",
-    'What truly sets me apart is my attention to detail, clarity in communication, and ability to bridge the gap between technical and non-technical teams. I lead by influence, inspiring collaboration and aligning teams toward a shared vision',
+    'I build scalable platforms, cloud infrastructure, and developer tooling that help teams ship faster with confidence. I specialize in turning complex product ideas into reliable, production-ready systems.',
+    'I combine deep engineering fundamentals with AI-native development, using natural language, coding agents, and automation to accelerate delivery while keeping architecture, performance, and maintainability in focus.',
+    'What sets me apart is clarity: I bridge the gap between product and engineering, communicate trade-offs clearly, and align teams around a shared technical direction.',
     "Let's build something extraordinary",
   ],
   ctaText: 'Explore',
@@ -95,18 +106,18 @@ export const aboutContent = {
   whoIAm: {
     title: 'Who I Am',
     paragraphs: [
-      "I'm Bhuvesh Dhiman, a software engineer driven by a lifelong curiosity about technology. Ever since I was a kid, I found myself fascinated by computers and the internet, constantly exploring how software and hardware work. This passion led me to pursue computer science and grow into the engineer I am today",
-      'My journey has taken me from building full-stack applications to designing cloud infrastructure and developing scalable platforms. I specialize in cloud-native technologies like AWS, Kubernetes, and serverless architectures, always seeking to simplify complex systems and create solutions that are both powerful and efficient',
-      'What truly makes me stand out is how I connect with people. I lead by influence, guiding teams by fostering collaboration and ensuring everyone feels heard and aligned. I have a knack for breaking down complex ideas into simple concepts, making it easy for both technical and non-technical teams to work together',
-      'At heart, I believe engineering is not just about building software. It is about creating environments where innovation thrives, ideas flow freely, and teams succeed together. Every project I take on reflects this mindset',
+      "I'm Bhuvesh Dhiman, a Senior Software Engineer and AI-native platform engineer driven by a long-standing curiosity about how systems work, from hardware to distributed applications. That curiosity led me into computer science, full-stack development, and eventually platform and infrastructure engineering.",
+      "Over the years, I've built full-stack applications, designed cloud-native platforms, and worked on developer tooling that powers teams at scale. I work heavily with AWS, Kubernetes, serverless architectures, and modern TypeScript/Node.js ecosystems to create systems that are both robust and easy to work with.",
+      "Today, my focus is on AI-native development: using natural language, coding agents, and automation to accelerate delivery without sacrificing architecture, reliability, or security. I don't treat AI as a shortcut; I treat it as a force multiplier paired with solid engineering fundamentals.",
+      "I lead by influence, not titles. I care about alignment, clear communication, and making complex ideas simple enough that both technical and non-technical stakeholders can make good decisions together. For me, engineering isn't just about shipping features. It's about building an environment where people, systems, and ideas can scale together.",
     ],
   },
   myApproach: {
     title: 'My Approach',
     paragraphs: [
-      'My passion for clean code and adherence to best practices drives me to continuously improve my skills and stay up to date with the latest industry trends, including advancements in AI',
-      'I excel in positive, stable, and process-driven environments with a clear vision, where I can tackle new challenges head-on and deliver tangible results. People genuinely enjoy collaborating with me, not just because of my technical input but because I bring clarity and a sense of ease to every meeting',
-      'I create a positive and productive vibe that helps teams move forward with confidence, ensuring everyone feels heard and aligned with our goals',
+      'I build systems with a balance of speed and rigor. I rely on clean architecture, clear boundaries, and solid testing, and then layer AI-native workflows on top to move faster without losing control.',
+      'In practice, that means using AI agents for prototyping, scaffolding, and boilerplate, while relying on my engineering experience for design decisions, critical paths, reviews, and production-level quality. AI accelerates the work, but it never replaces accountability.',
+      'I do my best work in environments with a clear vision and high trust, where teams value thoughtful processes, honest feedback, and long-term maintainability. People enjoy working with me because I bring structure without stress. I keep discussions grounded, make trade-offs explicit, and help teams move forward with confidence.',
     ],
   },
   skillsTitle: 'My Skills',
@@ -118,6 +129,12 @@ export interface Skill {
 }
 
 export const skills: Skill[] = [
+  { name: 'Platform Engineering', icon: 'FaServer' },
+  { name: 'Product Engineering', icon: 'FaBox' },
+  { name: 'AI-native Development', icon: 'FaBrain' },
+  { name: 'LLM-powered Workflows', icon: 'FaStream' },
+  { name: 'Developer Tooling', icon: 'FaTools' },
+  { name: 'AWS', icon: 'FaAws' },
   { name: 'TypeScript', icon: 'SiTypescript' },
   { name: 'JavaScript', icon: 'SiJavascript' },
   { name: 'Node.js', icon: 'FaNodeJs' },
@@ -128,7 +145,6 @@ export const skills: Skill[] = [
   { name: 'MySQL', icon: 'SiMysql' },
   { name: 'NoSQL', icon: 'SiMongodb' },
   { name: 'Azure', icon: 'FaCloud' },
-  { name: 'AWS', icon: 'FaAws' },
   { name: 'Docker', icon: 'FaDocker' },
   { name: 'Fargate', icon: 'FaAws' },
   { name: 'Kubernetes', icon: 'SiKubernetes' },

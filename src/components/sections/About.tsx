@@ -1,7 +1,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaReact, FaNodeJs, FaAws, FaDocker, FaCloud } from 'react-icons/fa';
+import {
+  FaReact,
+  FaNodeJs,
+  FaAws,
+  FaDocker,
+  FaCloud,
+  FaServer,
+  FaBox,
+  FaBrain,
+  FaStream,
+  FaTools,
+} from 'react-icons/fa';
 import {
   SiTypescript,
   SiJavascript,
@@ -13,28 +24,36 @@ import {
   SiAmazoneks,
   SiAwslambda,
 } from 'react-icons/si';
+import { skills as skillsData } from '@/data/content';
 
 const About = () => {
-  const skills = [
-    { name: 'TypeScript', icon: <SiTypescript className="w-5 h-5" /> },
-    { name: 'JavaScript', icon: <SiJavascript className="w-5 h-5" /> },
-    { name: 'Node.js', icon: <FaNodeJs className="w-5 h-5" /> },
-    { name: 'React', icon: <FaReact className="w-5 h-5" /> },
-    { name: 'Redux', icon: <SiRedux className="w-5 h-5" /> },
-    { name: 'React Native', icon: <FaReact className="w-5 h-5" /> },
-    { name: 'Express.js', icon: <SiExpress className="w-5 h-5" /> },
-    { name: 'MySQL', icon: <SiMysql className="w-5 h-5" /> },
-    { name: 'NoSQL', icon: <SiMongodb className="w-5 h-5" /> },
-    { name: 'Azure', icon: <FaCloud className="w-5 h-5" /> },
-    { name: 'AWS', icon: <FaAws className="w-5 h-5" /> },
-    { name: 'Docker', icon: <FaDocker className="w-5 h-5" /> },
-    { name: 'Fargate', icon: <FaAws className="w-5 h-5" /> },
-    { name: 'Kubernetes', icon: <SiKubernetes className="w-5 h-5" /> },
-    { name: 'EKS', icon: <SiAmazoneks className="w-5 h-5" /> },
-    { name: 'CDK', icon: <FaAws className="w-5 h-5" /> },
-    { name: 'Serverless', icon: <SiAwslambda className="w-5 h-5" /> },
-    { name: 'Infrastructure as Code', icon: <FaAws className="w-5 h-5" /> },
-  ];
+  // Map icon string names to actual React icon components
+  const iconMap: Record<string, React.ReactNode> = {
+    SiTypescript: <SiTypescript className="w-5 h-5" />,
+    SiJavascript: <SiJavascript className="w-5 h-5" />,
+    FaNodeJs: <FaNodeJs className="w-5 h-5" />,
+    FaReact: <FaReact className="w-5 h-5" />,
+    SiRedux: <SiRedux className="w-5 h-5" />,
+    SiExpress: <SiExpress className="w-5 h-5" />,
+    SiMysql: <SiMysql className="w-5 h-5" />,
+    SiMongodb: <SiMongodb className="w-5 h-5" />,
+    FaAws: <FaAws className="w-5 h-5" />,
+    FaCloud: <FaCloud className="w-5 h-5" />,
+    FaDocker: <FaDocker className="w-5 h-5" />,
+    SiKubernetes: <SiKubernetes className="w-5 h-5" />,
+    SiAmazoneks: <SiAmazoneks className="w-5 h-5" />,
+    SiAwslambda: <SiAwslambda className="w-5 h-5" />,
+    FaServer: <FaServer className="w-5 h-5" />,
+    FaBox: <FaBox className="w-5 h-5" />,
+    FaBrain: <FaBrain className="w-5 h-5" />,
+    FaStream: <FaStream className="w-5 h-5" />,
+    FaTools: <FaTools className="w-5 h-5" />,
+  };
+
+  const skills = skillsData.map((skill) => ({
+    name: skill.name,
+    icon: iconMap[skill.icon] || <FaAws className="w-5 h-5" />,
+  }));
 
   return (
     <section id="about" className="py-24 px-4 md:px-8 bg-gray-800">
@@ -57,28 +76,30 @@ const About = () => {
               <h3 className="text-2xl font-bold mb-6 text-primary">Who I Am</h3>
               <div className="space-y-4 text-gray-300">
                 <p>
-                  I'm Bhuvesh Dhiman, a software engineer driven by a lifelong curiosity about
-                  technology. Ever since I was a kid, I found myself fascinated by computers and the
-                  internet, constantly exploring how software and hardware work. This passion led me
-                  to pursue computer science and grow into the engineer I am today.
+                  I'm Bhuvesh Dhiman, a Senior Software Engineer and AI-native platform engineer
+                  driven by a long-standing curiosity about how systems work, from hardware to
+                  distributed applications. That curiosity led me into computer science, full-stack
+                  development, and eventually platform and infrastructure engineering.
                 </p>
                 <p>
-                  My journey has taken me from building full-stack applications to designing cloud
-                  infrastructure and developing scalable platforms. I specialize in cloud-native
-                  technologies like AWS, Kubernetes, and serverless architectures, always seeking to
-                  simplify complex systems and create solutions that are both powerful and
-                  efficient.
+                  Over the years, I've built full-stack applications, designed cloud-native
+                  platforms, and worked on developer tooling that powers teams at scale. I work
+                  heavily with AWS, Kubernetes, serverless architectures, and modern
+                  TypeScript/Node.js ecosystems to create systems that are both robust and easy to
+                  work with.
                 </p>
                 <p>
-                  What truly makes me stand out is how I connect with people. I lead by influence,
-                  guiding teams by fostering collaboration and ensuring everyone feels heard and
-                  aligned. I have a knack for breaking down complex ideas into simple concepts,
-                  making it easy for both technical and non-technical teams to work together.
+                  Today, my focus is on AI-native development: using natural language, coding
+                  agents, and automation to accelerate delivery without sacrificing architecture,
+                  reliability, or security. I don't treat AI as a shortcut; I treat it as a force
+                  multiplier paired with solid engineering fundamentals.
                 </p>
                 <p>
-                  At heart, I believe engineering is not just about building software. It is about
-                  creating environments where innovation thrives, ideas flow freely, and teams
-                  succeed together. Every project I take on reflects this mindset.
+                  I lead by influence, not titles. I care about alignment, clear communication, and
+                  making complex ideas simple enough that both technical and non-technical
+                  stakeholders can make good decisions together. For me, engineering isn't just
+                  about shipping features. It's about building an environment where people, systems,
+                  and ideas can scale together.
                 </p>
               </div>
             </motion.div>
@@ -93,19 +114,21 @@ const About = () => {
               <h3 className="text-2xl font-bold mb-6 text-primary">My Approach</h3>
               <div className="space-y-4 text-gray-300">
                 <p>
-                  My passion for clean code and adherence to best practices drives me to
-                  continuously improve my skills and stay up to date with the latest industry
-                  trends, including advancements in AI.
+                  I build systems with a balance of speed and rigor. I rely on clean architecture,
+                  clear boundaries, and solid testing, and then layer AI-native workflows on top to
+                  move faster without losing control.
                 </p>
                 <p>
-                  I excel in positive, stable, and process-driven environments with a clear vision,
-                  where I can tackle new challenges head-on and deliver tangible results. People
-                  genuinely enjoy collaborating with me, not just because of my technical input but
-                  because I bring clarity and a sense of ease to every meeting.
+                  In practice, that means using AI agents for prototyping, scaffolding, and
+                  boilerplate, while relying on my engineering experience for design decisions,
+                  critical paths, reviews, and production-level quality. AI accelerates the work,
+                  but it never replaces accountability.
                 </p>
                 <p>
-                  I create a positive and productive vibe that helps teams move forward with
-                  confidence, ensuring everyone feels heard and aligned with our goals.
+                  I do my best work in environments with a clear vision and high trust, where teams
+                  value thoughtful processes, honest feedback, and long-term maintainability. People
+                  enjoy working with me because I bring structure without stress. I keep discussions
+                  grounded, make trade-offs explicit, and help teams move forward with confidence.
                 </p>
               </div>
             </motion.div>
