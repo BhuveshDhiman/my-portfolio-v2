@@ -21,6 +21,7 @@ const Header = () => {
   const navItems = [
     { name: 'About', href: '#about' },
     { name: 'Experience', href: '#experience' },
+    { name: 'Blog', href: 'https://blog.bhuveshdhiman.com/', external: true },
   ];
 
   return (
@@ -55,12 +56,23 @@ const Header = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Link
-                href={item.href}
-                className="text-gray-300 hover:text-primary transition-colors duration-300"
-              >
-                {item.name}
-              </Link>
+              {item.external ? (
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-primary transition-colors duration-300"
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  href={item.href}
+                  className="text-gray-300 hover:text-primary transition-colors duration-300"
+                >
+                  {item.name}
+                </Link>
+              )}
             </motion.div>
           ))}
         </nav>
@@ -100,16 +112,29 @@ const Header = () => {
           className="md:hidden bg-gray-900 border-t border-gray-800"
         >
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-gray-300 hover:text-primary transition-colors duration-300 py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navItems.map((item) =>
+              item.external ? (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-primary transition-colors duration-300 py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-gray-300 hover:text-primary transition-colors duration-300 py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              )
+            )}
           </div>
         </motion.div>
       )}
