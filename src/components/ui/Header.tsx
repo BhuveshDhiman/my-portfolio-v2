@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaCode } from 'react-icons/fa';
@@ -43,6 +44,9 @@ const Header = () => {
             transition={{ duration: 0.5 }}
             className="flex items-center"
           >
+            <div className="relative w-8 h-8 rounded-full overflow-hidden border-2 border-primary mr-2">
+              <Image src="/profile-face.jpeg" alt="Bhuvesh Dhiman" fill className="object-cover object-center" />
+            </div>
             <span className="font-mono text-lg font-bold text-white">Bhuvesh</span>
           </motion.div>
         </Link>
